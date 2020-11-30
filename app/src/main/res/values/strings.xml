@@ -14,4 +14,7 @@
     <string name="cast_name_3">Mark  Ruffalo</string>
     <string name="cast_name_4">Chris Hemsworth</string>
     <string name="back">Back</string>
+    <string name="cast_img_description">cast_img</string>
+    <string name="bi_description">background_img</string>
+    <string name="star_description">star_img</string>
 </resources>
