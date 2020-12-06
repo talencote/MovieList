@@ -15,7 +15,7 @@
     <color name="gray_dark">#FF6D6D80</color>
     <color name="pink_light">#FFFF3365</color>
 
-
+<!--    Movies List    -->
     <color name="background_card_color">#FF222232</color>
     <color name="stroke_card_color">#FF636375</color>
 </resources>

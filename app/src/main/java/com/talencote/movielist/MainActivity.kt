@@ -7,9 +7,7 @@ import  com.talencote.movielist.FragmentMoviesDetails
 import  com.talencote.movielist.FragmentMoviesList
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity(),
-        FragmentMoviesList.MoviesListItemClickListener,
-        FragmentMoviesDetails.MoviesDetailsBackClickListener
+class MainActivity : AppCompatActivity()
 {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,32 +19,11 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
-    override fun onMovieSelected() {
-        routeToMovieDetails()
-    }
-
-    override fun onMovieDeselected() {
-        routeBack()
-    }
-
     private fun routeToMoviesList() {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.persistent_container, FragmentMoviesList.create(), FragmentMoviesList::class.java.simpleName)
-            addToBackStack("trans:${FragmentMoviesList::class.java.simpleName}")
+            replace(R.id.persistent_container, FragmentMoviesList.newInstance(), FragmentMoviesList::class.java.simpleName)
             commit()
         }
-    }
-
-    private fun routeToMovieDetails() {
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.persistent_container, FragmentMoviesDetails.create(), FragmentMoviesDetails::class.java.simpleName)
-            addToBackStack("trans:${FragmentMoviesDetails::class.java.simpleName}")
-            commit()
-        }
-    }
-
-    private fun routeBack() {
-        supportFragmentManager.popBackStack()
     }
 }
 

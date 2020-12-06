@@ -10,45 +10,17 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
-class FragmentMoviesDetails : Fragment() {
-
-    var listener: MoviesDetailsBackClickListener? = null
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        if (context is MoviesDetailsBackClickListener) {
-            listener = context
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_movies_details, container, false)
-    }
+class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
 
     override fun onStart() {
         super.onStart()
 
         view?.findViewById<TextView>(R.id.back_btn)?.setOnClickListener {
-            listener?.onMovieDeselected()
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
 
-    override fun onDetach() {
-        super.onDetach()
-
-        listener = null
-    }
-
-    interface MoviesDetailsBackClickListener {
-        fun onMovieDeselected()
-    }
-
     companion object {
-        fun create() = FragmentMoviesDetails()
+        fun newInstance() = FragmentMoviesDetails()
     }
 }

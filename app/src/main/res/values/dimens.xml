@@ -9,6 +9,7 @@
     <dimen name="spacing_6x">24dp</dimen>
     <dimen name="spacing_13x">52dp</dimen>
     <dimen name="spacing_14x">56dp</dimen>
+    <dimen name="spacing_15x">60dp</dimen>
 
     <dimen name="text_size_headline">40sp</dimen>
     <dimen name="text_size_sub_title">14sp</dimen>
@@ -24,6 +25,7 @@
     <dimen name="movies_list_allowed_age_corners">5dp</dimen>
     <dimen name="movies_list_favorite_icon_space">16dp</dimen>
     <dimen name="movies_list_rating_star_icon_space">8dp</dimen>
+    <dimen name="movies_list_image">248dp</dimen>
     <!-- Movies List screen -->
 
 </resources>

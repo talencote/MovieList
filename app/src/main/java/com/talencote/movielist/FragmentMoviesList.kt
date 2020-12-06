@@ -10,47 +10,20 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
-class FragmentMoviesList : Fragment() {
-
-    var listener: MoviesListItemClickListener? = null
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        if (context is MoviesListItemClickListener) {
-            listener = context
-        }
-    }
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?):
-    View? {
-        return inflater.inflate(R.layout.fragment_movies_list, container, false)
-    }
-
+class FragmentMoviesList : Fragment(R.layout.fragment_movies_list) {
     override fun onStart() {
         super.onStart()
 
         view?.findViewById<View>(R.id.movies_list_item_layout)?.setOnClickListener {
-            listener?.onMovieSelected()
+            requireActivity().supportFragmentManager.beginTransaction().apply {
+                replace(R.id.persistent_container, FragmentMoviesDetails.newInstance(), FragmentMoviesDetails::class.java.simpleName)
+                addToBackStack("trans: FragmentMoviesDetails")
+                commit()
+            }
         }
     }
 
-    override fun onDetach() {
-        listener = null
-
-        super.onDetach()
-    }
-
-
-
-    interface MoviesListItemClickListener {
-        fun onMovieSelected()
-    }
-
     companion object {
-        fun create() = FragmentMoviesList()
+        fun newInstance() = FragmentMoviesList()
     }
 }
