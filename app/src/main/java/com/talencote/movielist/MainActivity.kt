@@ -3,22 +3,27 @@ package com.talencote.movielist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import  com.talencote.movielist.FragmentMoviesDetails
+import  com.talencote.movielist.FragmentMoviesList
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity()
+{
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val hellowrld: TextView = findViewById(R.id.hellowrld)
-
-        hellowrld.setOnClickListener { moveToDetailsActivity() }
+        if (savedInstanceState == null) {
+            routeToMoviesList()
+        }
     }
 
-    private fun moveToDetailsActivity() {
-
-        val intent = Intent(this, MovieDetailsActivity::class.java)
-
-        startActivity(intent)
+    private fun routeToMoviesList() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.persistent_container, FragmentMoviesList.newInstance(), FragmentMoviesList::class.java.simpleName)
+            commit()
+        }
     }
 }
+
