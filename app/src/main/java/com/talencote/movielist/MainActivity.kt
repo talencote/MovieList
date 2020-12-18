@@ -1,11 +1,8 @@
 package com.talencote.movielist
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import  com.talencote.movielist.FragmentMoviesDetails
-import  com.talencote.movielist.FragmentMoviesList
-import android.widget.TextView
+import com.talencote.movielist.movieslist.FragmentMoviesList
 
 class MainActivity : AppCompatActivity()
 {

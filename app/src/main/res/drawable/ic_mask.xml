@@ -4,6 +4,7 @@
     android:height="159dp"
     android:viewportWidth="375"
     android:viewportHeight="298">
+    <!-- height * 1,257 = width  -->
     <path android:pathData="M0,0H375V298H0V0Z">
         <aapt:attr name="android:fillColor">
             <gradient

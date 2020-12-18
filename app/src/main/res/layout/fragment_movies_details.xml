@@ -141,7 +141,7 @@
             app:layout_constraintTop_toBottomOf="@+id/movie_tags" />
 
         <TextView
-            android:id="@+id/reviews"
+            android:id="@+id/movie_reviews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_4x"
@@ -157,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="reviews" />
+            app:constraint_referenced_ids="movie_reviews" />
 
         <TextView
             android:id="@+id/storyline"
@@ -204,109 +204,16 @@
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="cast" />
 
-        <ImageView
-            android:id="@+id/cast_img_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_4x"
-            android:contentDescription="@string/cast_img_description"
-            android:src="@drawable/cast_img_1"
-            app:layout_constraintEnd_toStartOf="@+id/cast_img_2"
-            app:layout_constraintHorizontal_bias="0.5"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cast"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_2x"
+            android:paddingStart="@dimen/spacing_3x"
+            android:paddingEnd="@dimen/spacing_3x"
+            app:layout_constraintTop_toBottomOf="@id/cast"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cast_text_barrier" />
-
-        <TextView
-            android:id="@+id/cast_name_1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_2x"
-            android:layout_marginBottom="@dimen/spacing_3x"
-            android:text="@string/cast_name_1"
-            android:textColor="@color/light_gray"
-            android:textSize="@dimen/text_size_body"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/cast_img_1"
-            app:layout_constraintStart_toStartOf="@id/cast_img_1"
-            app:layout_constraintTop_toBottomOf="@id/cast_img_1" />
-
-        <ImageView
-            android:id="@+id/cast_img_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_4x"
-            android:contentDescription="@string/cast_img_description"
-            android:src="@drawable/cast_img_2"
-            app:layout_constraintEnd_toStartOf="@+id/cast_img_3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cast_img_1"
-            app:layout_constraintTop_toBottomOf="@id/cast_text_barrier" />
-
-        <TextView
-            android:id="@+id/cast_name_2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_2x"
-            android:layout_marginBottom="@dimen/spacing_3x"
-            android:text="@string/cast_name_2"
-            android:textColor="@color/light_gray"
-            android:textSize="@dimen/text_size_body"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/cast_img_2"
-            app:layout_constraintStart_toStartOf="@id/cast_img_2"
-            app:layout_constraintTop_toBottomOf="@id/cast_img_2" />
-
-        <ImageView
-            android:id="@+id/cast_img_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_4x"
-            android:contentDescription="@string/cast_img_description"
-            android:src="@drawable/cast_img_3"
-            app:layout_constraintEnd_toStartOf="@+id/cast_img_4"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cast_img_2"
-            app:layout_constraintTop_toBottomOf="@id/cast_text_barrier" />
-
-        <TextView
-            android:id="@+id/cast_name_3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_2x"
-            android:layout_marginBottom="@dimen/spacing_3x"
-            android:text="@string/cast_name_3"
-            android:textColor="@color/light_gray"
-            android:textSize="@dimen/text_size_body"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/cast_img_3"
-            app:layout_constraintStart_toStartOf="@id/cast_img_3"
-            app:layout_constraintTop_toBottomOf="@id/cast_img_3" />
-
-        <ImageView
-            android:id="@+id/cast_img_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_4x"
-            android:contentDescription="@string/cast_img_description"
-            android:src="@drawable/cast_img_4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/cast_img_3"
-            app:layout_constraintTop_toBottomOf="@id/cast_text_barrier" />
-
-        <TextView
-            android:id="@+id/cast_name_4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_2x"
-            android:layout_marginBottom="@dimen/spacing_3x"
-            android:text="@string/cast_name_4"
-            android:textColor="@color/light_gray"
-            android:textSize="@dimen/text_size_body"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/cast_img_4"
-            app:layout_constraintStart_toStartOf="@id/cast_img_4"
-            app:layout_constraintTop_toBottomOf="@id/cast_img_4" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
