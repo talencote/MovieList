@@ -7,9 +7,12 @@
     <dimen name="spacing_4x">16dp</dimen>
     <dimen name="spacing_4_5x">18dp</dimen>
     <dimen name="spacing_6x">24dp</dimen>
+    <dimen name="spacing_7x">28dp</dimen>
     <dimen name="spacing_13x">52dp</dimen>
     <dimen name="spacing_14x">56dp</dimen>
     <dimen name="spacing_15x">60dp</dimen>
+    <dimen name="spacing_16x">64dp</dimen>
+    <dimen name="spacing_17x">68dp</dimen>
 
     <dimen name="text_size_headline">40sp</dimen>
     <dimen name="text_size_sub_title">14sp</dimen>
@@ -19,13 +22,15 @@
     <dimen name="movie_logo_image_height">298dp</dimen>
 
     <!-- Movies List screen -->
-    <dimen name="movies_list_card_width">170dp</dimen>
+
+    <!-- card_width * 1.46 = movie_list_image (170dp bot) -->
+    <dimen name="movies_list_card_width">160dp</dimen>
     <dimen name="movies_list_card_corners">8dp</dimen>
     <dimen name="movies_list_allowed_age_space">24dp</dimen>
     <dimen name="movies_list_allowed_age_corners">5dp</dimen>
     <dimen name="movies_list_favorite_icon_space">16dp</dimen>
     <dimen name="movies_list_rating_star_icon_space">8dp</dimen>
-    <dimen name="movies_list_image">248dp</dimen>
+    <dimen name="movies_list_image">236dp</dimen>
     <!-- Movies List screen -->
 
 </resources>
