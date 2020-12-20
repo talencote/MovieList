@@ -12,28 +12,39 @@ import com.talencote.movielist.data.ActorDataSource
 class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
 
     private var recycler: RecyclerView? = null
+    private var backBTN: TextView? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recycler = view.findViewById(R.id.rv_cast)
-        recycler?.adapter = MovieDetailsAdapter()
-        val layoutManager = LinearLayoutManager(context)
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        recycler?.layoutManager = layoutManager
+        findViews()
+        fillViews()
+        setListeners()
+
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onStart() {
         super.onStart()
 
-        view?.findViewById<TextView>(R.id.back_btn)?.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
-        }
-
         updateData()
     }
 
+    private fun findViews() {
+        recycler = view?.findViewById(R.id.rv_cast)
+        backBTN = view?.findViewById<TextView>(R.id.back_btn)
+    }
 
+    private fun fillViews() {
+        recycler?.adapter = MovieDetailsAdapter()
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        recycler?.layoutManager = layoutManager
+    }
 
+    private fun setListeners() {
+        backBTN?.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+    }
 
     private fun updateData() {
         (recycler?.adapter as? MovieDetailsAdapter)?.apply {

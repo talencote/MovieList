@@ -1,6 +1,5 @@
 package com.talencote.movielist.moviesdetails
 
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView

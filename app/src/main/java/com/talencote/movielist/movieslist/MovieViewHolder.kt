@@ -15,6 +15,7 @@ class MovieViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val movieLength: TextView = itemView.findViewById(R.id.movie_length)
     private val movieReviews: TextView = itemView.findViewById(R.id.movie_reviews)
     private val movieAge: TextView = itemView.findViewById(R.id.movies_age)
+    private val movieFavorite: ImageView = itemView.findViewById(R.id.movies_favorite)
 
     fun onBind(movie: Movie) {
         movieImage.setImageResource(movie.movieImage)
@@ -23,5 +24,8 @@ class MovieViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         movieLength.text = movie.movieLength
         movieReviews.text = movie.movieReviews
         movieAge.text = movie.movieAge
+        if (movie.isFavorite) {
+            movieFavorite.setColorFilter(R.color.pink_light)
+        }
     }
 }

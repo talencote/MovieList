@@ -1,6 +1,5 @@
 package com.talencote.movielist.moviesdetails
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,5 +27,6 @@ class MovieDetailsAdapter : RecyclerView.Adapter<ActorViewHolder>() {
 
     fun bindActors(newActors: List<Actor>) {
         actorsList = newActors
+        notifyDataSetChanged()
     }
 }

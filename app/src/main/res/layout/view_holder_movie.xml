@@ -8,10 +8,7 @@
     android:layout_marginTop="@dimen/spacing_4x"
     android:paddingBottom="@dimen/spacing_2x"
     android:layout_marginEnd="@dimen/spacing_2x"
-    android:background="@drawable/shape_rounded_stroke_rect_background_dark_blue"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent">
+    android:background="@drawable/shape_rounded_stroke_rect_background_dark_blue">
 
 
     <ImageView
@@ -19,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/movies_list_image"
         android:contentDescription="@string/movies_list_header_image_description"
-        android:src="@drawable/movie_prev_avengers"
+        tools:src="@drawable/movie_prev_avengers"
         app:layout_constraintEnd_toEndOf="@id/movies_list_item_layout"
         app:layout_constraintStart_toStartOf="@id/movies_list_item_layout"
         app:layout_constraintTop_toTopOf="@id/movies_list_item_layout" />
@@ -44,7 +41,7 @@
         android:textSize="@dimen/text_size_body"
         android:textColor="@color/light_white"
         android:textStyle="bold"
-        android:text="@string/movies_list_allowed_age"
+        tools:text="@string/movies_list_allowed_age"
         android:background="@drawable/shape_heavy_rounded_rect_background_dark_blue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +55,8 @@
         android:contentDescription="@string/movies_list_favorite_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_like" />
+        app:srcCompat="@drawable/ic_like"
+        app:tint="@color/light_white" />
 
     <ImageView
         android:id="@+id/star_1"
@@ -126,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_2x"
         android:layout_marginBottom="@dimen/spacing_1x"
-        android:text="@string/number_reviews"
+        tools:text="@string/number_reviews"
         android:textColor="@color/gray"
         android:textSize="@dimen/text_size_description"
         android:textStyle="bold"
@@ -139,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_2x"
         android:layout_marginBottom="@dimen/spacing_2x"
-        android:text="@string/avengers_tags"
+        tools:text="@string/avengers_tags"
         android:textColor="@color/tags"
         android:textSize="@dimen/text_size_description"
         app:layout_constraintBottom_toTopOf="@id/movie_reviews"
@@ -150,7 +148,7 @@
         android:id="@+id/movie_name"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="@string/movies_list_film_name"
+        tools:text="@string/movies_list_film_name"
         android:textSize="@dimen/text_size_sub_title"
         android:textStyle="bold"
         android:textColor="@color/light_white"
@@ -165,7 +163,7 @@
         android:layout_marginStart="@dimen/spacing_2x"
         android:layout_marginTop="@dimen/spacing_2x"
         android:alpha="0.5"
-        android:text="@string/movies_list_film_time"
+        tools:text="@string/movies_list_film_time"
         android:textColor="@color/light_white"
         android:textSize="@dimen/text_size_description"
         android:textStyle="bold"

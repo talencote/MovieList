@@ -1,6 +1,5 @@
 package com.talencote.movielist.movieslist
 
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +33,7 @@ class MovieListAdapter(
 
     fun bindMovies(newMovies: List<Movie>) {
         moviesList = newMovies
+        notifyDataSetChanged()
     }
 
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingStart="@dimen/spacing_1x"
     android:paddingEnd="@dimen/spacing_1x"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/cast_img_description"
-        android:src="@drawable/cast_img_mark_ruffalo"
+        tools:src="@drawable/cast_img_mark_ruffalo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -22,8 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_2x"
-        android:layout_marginBottom="@dimen/spacing_3x"
-        android:text="@string/cast_name_1"
+        tools:text="@string/cast_name_1"
         android:textColor="@color/light_gray"
         android:textSize="@dimen/text_size_body"
         android:textStyle="bold"

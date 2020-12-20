@@ -15,10 +15,9 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list) {
     private var recycler: RecyclerView? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recycler = view.findViewById(R.id.rv_movies)
-        recycler?.adapter = MovieListAdapter(clickListener)
-        val layoutManager = GridLayoutManager(context, 2)
-        recycler?.layoutManager = layoutManager
+        findViews()
+        fillViews()
+
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -38,6 +37,16 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list) {
         }
     }
 
+    private fun findViews() {
+        recycler = view?.findViewById(R.id.rv_movies)
+    }
+
+    private fun fillViews() {
+        recycler?.adapter = MovieListAdapter(clickListener)
+        val layoutManager = GridLayoutManager(context, 2)
+        recycler?.layoutManager = layoutManager
+    }
+
     private fun updateData() {
         (recycler?.adapter as? MovieListAdapter)?.apply {
             bindMovies(MoviesDataSource().getMovies())
@@ -48,9 +57,4 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list) {
     companion object {
         fun newInstance() = FragmentMoviesList()
     }
-}
-
-interface RouteToMovieDetails {
-
-    fun onMovieSelected()
 }
